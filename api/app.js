@@ -17,6 +17,7 @@ app.use(cors({ origin: 'http://localhost:5173',  methods: ['GET', 'POST', 'PUT',
 app.use(express.json());
 app.use(cookieParser());
 // console.log(process.env.DATABASE_URL)+
+app.get('/',(req,res)=>res.json({hello:"main"}))
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
