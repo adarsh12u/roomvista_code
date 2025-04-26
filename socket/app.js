@@ -1,8 +1,11 @@
 import { Server } from "socket.io";
+import dotenv from "dotenv";
+
+dotenv.config(); // Always load env variables first!
 
 const io = new Server({
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://roomvista-code.vercel.app",
   },
 });
 
@@ -38,4 +41,7 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen("4000");
+const PORT = process.env.PORT || 4000;
+io.listen(PORT, () => {
+  console.log(`Socket server listening on port ${PORT} 🚀`);
+});

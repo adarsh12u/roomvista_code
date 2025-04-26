@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8800;
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173',  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+app.use(cors({ origin: 'https://roomvista-code.vercel.app',  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
